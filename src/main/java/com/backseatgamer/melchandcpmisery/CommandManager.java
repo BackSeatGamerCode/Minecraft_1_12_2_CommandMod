@@ -25,7 +25,7 @@ public class CommandManager {
     public static void initializeFile(){
         try {
             FileWriter myWriter = new FileWriter(FILENAME);
-            myWriter.write("{}");
+            myWriter.write("{\"commands\": {}, \"variables\": {}}");
             myWriter.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class CommandManager {
             }
 
         } catch (FileNotFoundException e) {
-            initializeFile();
+//            initializeFile();
             return false;
 
         } catch (JsonSyntaxException e){
