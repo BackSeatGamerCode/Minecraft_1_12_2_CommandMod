@@ -34,6 +34,12 @@ public class MelchAndCPMisery
 
     private static Logger logger;
 
+    public static void announceReward(String message){
+        commandQueue.add(
+                "/tellraw @a {\"text\":\"" + message.replace("\"", "\\\"") + "\",\"color\":\"dark_green\"}"
+        );
+    }
+
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
